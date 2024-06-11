@@ -1,0 +1,26 @@
+MICROCONTROLLER PROGRAM
+Our experiment works on an Microcontroller program, where it takes the input signals from the
+hendel lock and it passes the signal to the Microcontroller board to start the motor to rotate, to
+retrieve the side stand mechanism.
+int encoder = 2, relay = 3; unsignedint rpm;
+volatile byte pulses; unsigned long tOld; unsignedintpulseturn = 12; void counter(){
+pulses++;
+}
+voidmotorOn(){ digitalWrite(relay, HIGH); delay(500);
+}
+voidmotorOff(){ digitalWrite(relay, LOW); delay(500);
+}
+void setup() { Serial.begin(9600); pinMode(encoder, INPUT); pinMode(relay, OUTPUT);
+attachInterrupt(0, counter, FALLING); pulses = 0;
+rpm = 0;
+tOld = 0;
+}
+void loop() {
+if(millis() - tOld>= 1000){ detachInterrupt(0);
+rpm = (60 * 1000/pulseturn)/(millis() - tOld)*pulses; tOld = millis();
+pulses = 0; Serial.print("RPM: "); Serial.println(rpm); if(rpm > 50){ motorOn();
+}else{ motorOff();
+}
+attachInterrupt(0, counter, FALLING);
+}
+}
