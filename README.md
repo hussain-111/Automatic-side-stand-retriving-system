@@ -1,6 +1,7 @@
 # Automatic-side-stand-retriving-system
 
-                 ![image](https://github.com/hussain-111/Automatic-side-stand-retriving-system/assets/138776937/c08fcbc0-452d-404f-ac85-459e14f77caa)
+![image](https://github.com/hussain-111/Automatic-side-stand-retriving-system/assets/138776937/e92eb4b1-bb7f-42dc-b38d-22ce65ce070d)
+
                  
 That sounds like a well-thought-out design! Using signals from the vehicle's speedometer to detect when the vehicle is moving and reaching a certain speed is a clever approach to trigger the side stand retrieval process. Incorporating feedback mechanisms to ensure that the side stand is only retracted when the vehicle is in motion and in the correct position adds an extra layer of safety.
 
